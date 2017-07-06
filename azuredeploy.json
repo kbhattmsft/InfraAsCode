@@ -38,43 +38,6 @@
     },
     "resources": [{
             "apiVersion": "[variables('apiVersion')]",
-            "type": "Microsoft.Network/publicIPAddresses",
-            "name": "[variables('publicIPAddressName')]",
-            "location": "[variables('location')]",
-            "properties": {
-                "publicIPAllocationMethod": "[variables('publicIPAddressType')]",
-                "dnsSettings": {
-                    "domainNameLabel": "[variables('uniqueDnsLabelPrefix')]"
-                }
-            }
-        },
-        {
-            "apiVersion": "[variables('apiVersion')]",
-            "type": "Microsoft.Network/virtualNetworks",
-            "name": "[variables('virtualNetworkName')]",
-            "location": "[variables('location')]",
-            "dependsOn": [
-                "[concat('Microsoft.Network/networkSecurityGroups/', variables('networkSecurityGroupName'))]"
-            ],
-            "properties": {
-                "addressSpace": {
-                    "addressPrefixes": [
-                        "[variables('addressPrefix')]"
-                    ]
-                },
-                "subnets": [{
-                    "name": "[variables('subnet1Name')]",
-                    "properties": {
-                        "addressPrefix": "[variables('subnet1Prefix')]",
-                        "networkSecurityGroup": {
-                            "id": "[resourceId('Microsoft.Network/networkSecurityGroups', variables('networkSecurityGroupName'))]"
-                        }
-                    }
-                }]
-            }
-        },
-        {
-            "apiVersion": "[variables('apiVersion')]",
             "type": "Microsoft.Network/networkInterfaces",
             "name": "[variables('nicName')]",
             "location": "[variables('location')]",
