@@ -31,7 +31,6 @@
         "publicIPAddressName": "sshPublicIP",
         "publicIPAddressType": "Dynamic",
         "virtualNetworkName": "sshVNET",
-        "networkSecurityGroupName": "networkSecurityGroup1",
         "sshKeyPath": "[concat('/home/',parameters('adminUserName'),'/.ssh/authorized_keys')]",
         "vnetID": "[resourceId('Microsoft.Network/virtualNetworks', variables('virtualNetworkName'))]",
         "subnet1Ref": "[concat(variables('vnetID'),'/subnets/',variables('subnet1Name'))]",
