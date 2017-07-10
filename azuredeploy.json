@@ -17,7 +17,7 @@
         }
     },
     "variables": {
-        "vmSize": "Standard_DS2",
+        "vmSize": "Standard_DS3",
         "vmName": "sshvm",
         "ubuntuOSVersion": "14.04.4-LTS",
         "uniqueDnsLabelPrefix": "[concat('store', uniquestring(resourceGroup().id))]",
